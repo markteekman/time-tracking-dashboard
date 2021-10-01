@@ -1,9 +1,6 @@
 ---
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-
 const {title} = Astro.props
-let subtitle = 'Accessible Astro Starter'
+let subtitle = 'Time Tracking Dashboard'
 ---
 <html lang="en" dir="ltr">
   <head>
@@ -17,7 +14,7 @@ let subtitle = 'Accessible Astro Starter'
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
 
     <!-- global css -->
     <link rel="stylesheet" href={Astro.resolve('../styles/globals.css')} />
@@ -34,9 +31,6 @@ let subtitle = 'Accessible Astro Starter'
   </head>
   <body>
 
-    <!-- header -->
-    <Header />
-
     <!-- main -->
     <main id="main-content">
 
@@ -44,30 +38,13 @@ let subtitle = 'Accessible Astro Starter'
 
     </main>
 
-    <!-- footer -->
-    <Footer />
-
   </body>
 </html>
 
 <style lang="scss">
-  // sticky footer on low content pages
-  html,
   body {
-    height: 100%;
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--background);
-
-    main { 
-      flex: 1 0 auto; 
-    }
-
-    footer { 
-      flex-shrink: 0;
-    }
+    display: grid;
+    place-items: center;
+    height: 100vh;
   }
 </style>
