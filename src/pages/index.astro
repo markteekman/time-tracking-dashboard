@@ -1,6 +1,77 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
+import UserCard from '../components/UserCard.astro'
+import TimeCard from '../components/TimeCard.astro'
+// get data
+const response = await fetch('https://markteekman.nl/data.json')
+const data = await response.json()
+// set categories
+const items = ["work", "play", "study", "exercise", "social", "self care"]
+// get current stat (daily, weekly, montly)
+// documment query select all stat a's
+const stats = document.querySelector('.card-actions')
+console.log(stats)
+// add stats active class toggle JS in UserCard
+// const currentStat = classList.contains('active')
+// display currentStat in 'Last ${currentStat} - workCurrent'
+// if (currentStat === 'daily')
+// then const workCurrent = JSON.stringify(data[0].timeframes.daily.current)
+// and const workPrevious = JSON.stringify(data[0].timeframes.daily.previous)
+// and const playCurrent = JSON.stringify(data[1].timeframes.daily.current)
+// etc..
+// else if (currentStat === 'weekly')
+// then const workCurrent = JSON.stringify(data[0].timeframes.weekly.current)
+// etc..
 ---
 <DefaultLayout title="Frontend Mentor">
-  <h1>Time Tracking Dashboard</h1>
+  <div class="container">
+    <UserCard username="Jeremy Robson" />
+    {items.map((item) => (
+      <TimeCard 
+        category="{item}" 
+      />
+    ))}
+  </div>
 </DefaultLayout>
+
+<style lang="scss" global>
+  @use "../styles/base/breakpoint" as *;
+
+  .container {
+    display: grid;
+    grid-gap: 1rem;
+    margin: 5rem 0;
+
+    @include breakpoint(large) {
+      grid-template-areas: 
+        "user work play study"
+        "user exersice social self";
+
+      > :first-child {
+        grid-area: user;
+      }
+    }
+
+    > * {
+      animation: fade-in 0.3s ease-in-out forwards;
+
+      @for $i from 0 through 7 {
+        &:nth-child(#{$i + 1}) {
+          animation-delay: 0.15s * $i;
+        }
+      }
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
