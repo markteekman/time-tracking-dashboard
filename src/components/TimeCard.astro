@@ -37,6 +37,10 @@ const {category} = Astro.props
       min-width: 250px;
     }
 
+    &:focus {
+      box-shadow: 0 4px 80px rgba(0, 0, 0, 0.2), 0 0 0 2px white;
+    }
+
     &:hover,
     &:focus {
       cursor: pointer;
@@ -122,6 +126,10 @@ const {category} = Astro.props
     .category {
       font-weight: 600;
       text-transform: capitalize;
+    }
+
+    .dots {
+      padding: 0.5rem;
     }
 
     .current-hrs {
