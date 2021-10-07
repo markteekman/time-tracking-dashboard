@@ -37,13 +37,11 @@ const items = ["work", "play", "study", "exercise", "social", "self care"]
   const stats = [...document.querySelector('.card-actions').children]
   const timeCards = [...document.querySelectorAll('.time-card')]
 
-  // functions
-
   // execution
   fetch('https://markteekman.github.io/time-tracking-dashboard/data.json')
   .then(response => response.json())
   .then(data => {
-    // 
+    // function to set current stats
     function showStats(timeCard, index, currentStat, previousText) {
       const stat = currentStat.innerText.toLowerCase()
       const current = timeCard.querySelector('.current-hrs')
@@ -51,7 +49,6 @@ const items = ["work", "play", "study", "exercise", "social", "self care"]
       current.innerText = `${data[index].timeframes[stat].current}hrs`
       previous.innerText = `${previousText} - ${data[index].timeframes[stat].previous}hrs`
     }
-
     // add event listener for each stat
     stats.forEach(stat => {
       stat.addEventListener('click', event => {
