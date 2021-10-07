@@ -58,12 +58,12 @@ const items = ["work", "play", "study", "exercise", "social", "self care"]
         // remove active class
         stats.forEach(stat => {
           stat.classList.remove('active')
-          stat.removeAttribute('aria-current="true"')
+          stat.removeAttribute('aria-current')
         })
         // get currently clicked item and add active class
         const currentStat = event.target
         currentStat.classList.add('active')
-        currentStat.setAttribute('aria-current="true"')
+        currentStat.setAttribute('aria-current', 'true')
         // get data corresponding to selected stat
         if (currentStat.innerText === 'Daily') {
           timeCards.forEach((timeCard, index) => {

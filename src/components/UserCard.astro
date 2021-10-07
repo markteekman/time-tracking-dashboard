@@ -11,11 +11,11 @@ const {username} = Astro.props
       <p>{username}</p>
     </div>
   </div>
-  <div class="card-actions">
-    <a href="#">Daily</a>
-    <a href="#" class="active" aria-current="true">Weekly</a>
-    <a href="#">Monthly</a>
-  </div>
+  <ul class="card-actions">
+    <li><a href="#">Daily</a></li>
+    <li><a href="#" class="active" aria-current="true">Weekly</a></li>
+    <li><a href="#">Monthly</a></li>
+  </ul>
 </div>
 
 <style lang="scss">
@@ -64,10 +64,6 @@ const {username} = Astro.props
       }
 
       .user-name {
-        span {
-          color: var(--neutral-pale);
-        }
-
         p {
           font-size: 1.5rem;
           font-weight: 300;
