@@ -13,7 +13,7 @@ const {username} = Astro.props
   </div>
   <div class="card-actions">
     <a href="#">Daily</a>
-    <a href="#" class="active">Weekly</a>
+    <a href="#" class="active" aria-current="true">Weekly</a>
     <a href="#">Monthly</a>
   </div>
 </div>
@@ -111,6 +111,14 @@ const {username} = Astro.props
       a:not(.active):focus,
       a:not(.active):hover {
         box-shadow: inset 0 -1.5rem 0 rgba(255, 255, 255, 0.3);
+      }
+
+      a:focus {
+        box-shadow: inset 0 -1.5rem 0 rgba(255, 255, 255, 0.3), 0 0 0 2px white;
+      }
+
+      a:not(.active):focus {
+        box-shadow: inset 0 -1.5rem 0 rgba(255, 255, 255, 0.3), 0 0 0 2px white;
       }
     }
   }
