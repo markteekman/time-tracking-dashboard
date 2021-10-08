@@ -52,12 +52,12 @@ const items = ["work", "play", "study", "exercise", "social", "self care"]
           })
         } else if (currentStat.innerText === 'Weekly') {
           timeCards.forEach((timeCard, index) => {
-            const previousText = 'Last week'
+            const previousText = 'Last Week'
             showStats(timeCard, index, currentStat, previousText)
           })
         } else if (currentStat.innerText === 'Monthly') {
           timeCards.forEach((timeCard, index) => {
-            const previousText = 'Last month'
+            const previousText = 'Last Month'
             showStats(timeCard, index, currentStat, previousText)
           })
         }
