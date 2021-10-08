@@ -8,7 +8,7 @@ const {username} = Astro.props
     </div>
     <div class="user-name">
       <span>Report for</span>
-      <p>{username}</p>
+      <h1>{username}</h1>
     </div>
   </div>
   <ul class="card-actions">
@@ -26,7 +26,7 @@ const {username} = Astro.props
     color: #fff;
     border-radius: 1rem;
     width: 90vw;
-    opacity: 0;
+    // opacity: 0;
     box-shadow: 0 4px 80px rgba(0, 0, 0, 0.2);
 
     @include breakpoint(large) {
@@ -64,13 +64,15 @@ const {username} = Astro.props
       }
 
       .user-name {
-        p {
+        h1 {
           font-size: 1.5rem;
+          line-height: 2rem;
           font-weight: 300;
           margin-top: 0.5rem;
 
           @include breakpoint(large) {
             font-size: 2.5rem;
+            line-height: 3rem;
           }
         }
       }
