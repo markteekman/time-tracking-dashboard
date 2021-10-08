@@ -64,7 +64,7 @@ As a bonus I want to achieve the following extra challenges:
 
 ### Continued development
 
-- Nothing I can think of for now.
+- I could maybe add an extra grid view for tablet sizes, with the category cards two by two and the user card spanning three rows.
 
 ### Useful resources
 
