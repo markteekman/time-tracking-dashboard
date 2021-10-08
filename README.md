@@ -35,7 +35,7 @@ As a bonus I want to achieve the following extra challenges:
 
 ### Screenshot
 
-![](./public/assets/social-image-preview.png)
+![social-preview-image](https://user-images.githubusercontent.com/3909046/136522531-a94558cb-0cb2-431a-8518-66fb0bab9442.png)
 
 ### Links
 
