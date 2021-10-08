@@ -29,11 +29,14 @@ const {username} = Astro.props
     opacity: 0;
     box-shadow: 0 4px 80px rgba(0, 0, 0, 0.2);
 
-    @include breakpoint(large) {
+    @include breakpoint(medium) {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       width: auto;
+    }
+
+    @include breakpoint(870) {
       min-width: 250px;
     }
 
@@ -49,7 +52,7 @@ const {username} = Astro.props
       background-color: var(--primary-blue);
       border-radius: 1rem;
 
-      @include breakpoint(large) {
+      @include breakpoint(medium) {
         flex-direction: column;
         align-items: flex-start;
         flex-grow: 2;
@@ -70,7 +73,7 @@ const {username} = Astro.props
           font-weight: 300;
           margin-top: 0.5rem;
 
-          @include breakpoint(large) {
+          @include breakpoint(medium) {
             font-size: 2.5rem;
             line-height: 3rem;
           }
@@ -82,7 +85,7 @@ const {username} = Astro.props
       display: flex;
       justify-content: space-between;
 
-      @include breakpoint(large) {
+      @include breakpoint(medium) {
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;

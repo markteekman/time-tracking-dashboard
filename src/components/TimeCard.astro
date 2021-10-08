@@ -32,8 +32,11 @@ const {category} = Astro.props
     box-shadow: 0 4px 80px rgba(0, 0, 0, 0.2);
     transition: background-color 0.2s ease-in-out;
 
-    @include breakpoint(large) {
+    @include breakpoint(medium) {
       width: auto;
+    }
+
+   @include breakpoint(870) {
       min-width: 250px;
     }
 
@@ -108,7 +111,7 @@ const {category} = Astro.props
       align-items: center;
     }
 
-    @include breakpoint(large) {
+    @include breakpoint(medium) {
       .card-lower {
         flex-direction: column;
         align-items: flex-start;

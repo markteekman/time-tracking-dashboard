@@ -75,14 +75,34 @@ const items = ["work", "play", "study", "exercise", "social", "self care"]
     grid-gap: 1rem;
     margin: 5rem 0;
 
+    grid-template-areas:
+      "user"
+      "work"
+      "play"
+      "study"
+      "exersice"
+      "social"
+      "self";
+
+    > :nth-child(1) { grid-area: user; }
+    > :nth-child(2) { grid-area: work; }
+    > :nth-child(3) { grid-area: play; }
+    > :nth-child(4) { grid-area: study; }
+    > :nth-child(5) { grid-area: exersice; }
+    > :nth-child(6) { grid-area: social; }
+    > :nth-child(7) { grid-area: self; }
+
+    @include breakpoint(medium) {
+      grid-template-areas: 
+        "user work play"
+        "user study exersice"
+        "user social self"
+    }
+
     @include breakpoint(large) {
       grid-template-areas: 
         "user work play study"
         "user exersice social self";
-
-      > :first-child {
-        grid-area: user;
-      }
     }
 
     > * {
