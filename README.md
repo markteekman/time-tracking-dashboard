@@ -59,15 +59,17 @@ As a bonus I want to achieve the following extra challenges:
 
 ### What I learned
 
-I learned that when adding transforms on an element, it creates its own [stacking context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context). What I wanted was to add a fade-in animation on my dashboard cards. The cards have a background with an icon in the `::after` pseudo element and are stacked behind the card using `z-index: 1;`. However, when you use a transform on the element it creates its own stacking context, causing the z-index position not to work anymore. A solution for this is to wrap the element containing the `::after` pseudo element in a container and apply the transform there so the your original stacking context is not changed. This [Stack Overflow solution](https://stackoverflow.com/questions/20851452/z-index-is-canceled-by-setting-transformrotate) describes it in great detail.
+- I learned that when adding transforms on an element, it creates its own [stacking context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context). I wanted to add a fade-in animation on my dashboard cards. The cards have a background with an icon in the `::after` pseudo element and are stacked behind the card using `z-index: -1;`. However, when you use a transform on the element it creates its own stacking context, causing the z-index position not to work as expected. A solution for this is to wrap the element containing the `::after` pseudo element in a container and apply the transform there so that your original stacking context is not changed. This [Stack Overflow solution](https://stackoverflow.com/questions/20851452/z-index-is-canceled-by-setting-transformrotate) describes it in great detail.
+- I learned how to get data from a `.json` file and display it on the page depending on which data the user wants to see. I used the JavaScript Fetch API to make this work.
 
 ### Continued development
 
-- ...
+- Nothing I can think of for now.
 
 ### Useful resources
 
-- [Stacking contexts and z-index](https://stackoverflow.com/questions/20851452/z-index-is-canceled-by-setting-transformrotate) - The solution I applied for using transforms on elements that have a negative z-index positioned after pseudo element.
+- [Stacking contexts and z-index](https://stackoverflow.com/questions/20851452/z-index-is-canceled-by-setting-transformrotate) - The solution I applied for using transforms on elements that have a negative z-index positioned `::after` pseudo element.
+- [JavaScript Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) - Used to get the data from the `.json` file.
 
 ## Author
 
